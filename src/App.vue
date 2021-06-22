@@ -1,23 +1,25 @@
 <template>
-  <div>Vue Calculator</div>
+  <Calculator />
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
+import Calculator from "./components/Calculator.vue";
 
 export default defineComponent({
-  name: 'App',
-  components: {},
-})
+  name: "App",
+  components: { Calculator },
+});
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+body {
+  font-family: "Spartan", Menlo, Avenir, Helvetica, Arial, sans-serif;
+  /*-webkit-font-smoothing: antialiased;*/
+  /*-moz-osx-font-smoothing: grayscale;*/
+  /*text-align: center;*/
+  /*color: #2c3e50;*/
+  /*margin-top: 60px;*/
 }
 </style>
