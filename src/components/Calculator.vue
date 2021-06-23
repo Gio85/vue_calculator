@@ -117,9 +117,9 @@ export default defineComponent({
       if (state.currentValue === "") return;
       if (state.currentValue !== "" && state.previousValue !== "") compute();
 
-      state.currentValue = defaultState.currentValue;
       state.previousValue = state.currentValue;
       state.operation = operation;
+      state.currentValue = defaultState.currentValue;
     };
 
     return {
