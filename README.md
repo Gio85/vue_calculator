@@ -31,7 +31,8 @@ Users should be able to:
 
 ### Screenshot
 
-![IMG_7926](https://user-images.githubusercontent.com/49147449/123147711-46342d80-d457-11eb-8fec-8505c27ea563.PNG)
+<img width="351" alt="Screenshot 2021-06-23 at 19 17 01" src="https://user-images.githubusercontent.com/49147449/123148018-a5923d80-d457-11eb-9ff5-d380406b22fe.png">
+
 <img width="1679" alt="Screenshot 2021-06-23 at 19 12 57" src="https://user-images.githubusercontent.com/49147449/123147856-711e8180-d457-11eb-87d6-a6b3eb767c0f.png">
 
 
@@ -102,9 +103,9 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [https://gio85.github.io/portfolio/](https://gio85.github.io/portfolio/)
+- Frontend Mentor - [@Gio85](https://www.frontendmentor.io/profile/Gio85)
+- Twitter - [@Gio85](https://twitter.com/Gio63193024)
 
 **Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
