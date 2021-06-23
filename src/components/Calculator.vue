@@ -4,40 +4,133 @@
       <div>calc</div>
       <div>theme</div>
     </div>
-    <div class="display">1234456</div>
+    <div class="display">
+      {{ previousValue }} {{ operation }} {{ currentValue }}
+    </div>
     <div class="buttons">
-      <button>7</button>
-      <button>8</button>
-      <button>9</button>
-      <button class="text">DEL</button>
+      <button @click="appendValue('7')">7</button>
+      <button @click="appendValue('8')">8</button>
+      <button @click="appendValue('9')">9</button>
+      <button @click="deleteLastValue()" class="text">DEL</button>
 
-      <button>4</button>
-      <button>5</button>
-      <button>6</button>
-      <button>+</button>
+      <button @click="appendValue('4')">4</button>
+      <button @click="appendValue('5')">5</button>
+      <button @click="appendValue('6')">6</button>
+      <button @click="setOperation('+')">+</button>
 
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>-</button>
+      <button @click="appendValue('1')">1</button>
+      <button @click="appendValue('2')">2</button>
+      <button @click="appendValue('3')">3</button>
+      <button @click="setOperation('-')">-</button>
 
-      <button>.</button>
-      <button>0</button>
-      <button>/</button>
-      <button>x️</button>
+      <button @click="appendValue('.')">.</button>
+      <button @click="appendValue('0')">0</button>
+      <button @click="setOperation('/')">/</button>
+      <button @click="setOperation('x')">x️</button>
 
-      <button class="span-two text">RESET</button>
-      <button class="span-two red">=</button>
+      <button @click="resetState()" class="span-two text">RESET</button>
+      <button @click="compute(true)" class="span-two red">=</button>
     </div>
   </div>
 </template>
 
-<script>
-import { defineComponent } from "vue";
+<script lang="ts">
+import { defineComponent, reactive, toRefs } from "vue";
+import { IState, TOperation } from "@/types";
+import { formatNumber } from "@/utils";
+
+const defaultState: IState = {
+  currentValue: "",
+  previousValue: "",
+  result: "",
+  isEqual: false,
+  operation: "" as unknown as TOperation,
+};
 
 export default defineComponent({
   name: "Calculator",
   components: {},
+  setup() {
+    const state = reactive<IState>({
+      ...defaultState,
+    });
+
+    const resetState = () => {
+      state.currentValue = defaultState.currentValue;
+      state.operation = defaultState.operation;
+      state.previousValue = defaultState.previousValue;
+      state.result = defaultState.result;
+      state.isEqual = defaultState.isEqual;
+      return;
+    };
+
+    const appendValue = (value: string) => {
+      if (
+        state.previousValue === "" &&
+        state.currentValue !== "" &&
+        state.isEqual
+      ) {
+        state.currentValue = defaultState.currentValue;
+        state.isEqual = defaultState.isEqual;
+      }
+      if (value === "." && state.currentValue.includes(value)) return;
+      state.currentValue = formatNumber(state.currentValue.concat(value));
+    };
+
+    const deleteLastValue = () => {
+      if (state.isEqual) return;
+      const slicedNumber = parseFloat(
+        state.currentValue.toString().split(",").join("").slice(0, -1)
+      );
+      if (isNaN(slicedNumber)) {
+        state.currentValue = defaultState.currentValue;
+        return;
+      }
+      state.currentValue = slicedNumber.toLocaleString("en", {
+        maximumFractionDigits: 0,
+      });
+    };
+
+    const compute = (isEqual = false) => {
+      let result = "";
+      const previousNumber = parseFloat(
+        state.previousValue.split(",").join("")
+      );
+      const currentNumber = parseFloat(state.currentValue.split(",").join(""));
+      if (isNaN(previousNumber) || isNaN(currentNumber)) return;
+
+      if (state.operation === "+") result = `${previousNumber + currentNumber}`;
+      if (state.operation === "-") result = `${previousNumber - currentNumber}`;
+      if (state.operation === "x") result = `${previousNumber * currentNumber}`;
+      if (state.operation === "/") result = `${previousNumber / currentNumber}`;
+
+      if (isEqual) {
+        state.isEqual = true;
+      }
+
+      state.currentValue = formatNumber(result);
+      state.operation = defaultState.operation;
+      state.previousValue = defaultState.previousValue;
+    };
+
+    const setOperation = (operation: TOperation) => {
+      if (state.currentValue === "") return;
+      if (state.currentValue !== "" && state.previousValue !== "") compute();
+
+      state.currentValue = defaultState.currentValue;
+      state.previousValue = state.currentValue;
+      state.operation = operation;
+    };
+
+    return {
+      ...toRefs(state),
+      appendValue,
+      deleteLastValue,
+      resetState,
+      compute,
+      setOperation,
+    };
+  },
 });
 </script>
 
@@ -50,8 +143,9 @@ body {
   font-size: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  width: 70%;
+  justify-content: space-evenly;
+  width: 95%;
+  height: 96vh;
   margin: 0 auto;
 }
 
@@ -72,8 +166,7 @@ body {
   align-items: flex-end;
   justify-content: space-around;
   flex-direction: column;
-  padding-right: 20px;
-  margin-top: 10px;
+  padding: 0 20px;
   word-wrap: break-word;
   word-break: break-all;
 }
@@ -82,10 +175,9 @@ body {
   display: grid;
   justify-content: center;
   padding: 20px;
-  margin-top: 10px;
   border-radius: 10px;
-  grid-template-columns: repeat(4, 85px);
-  grid-template-rows: repeat(5, 80px);
+  grid-template-columns: repeat(4, 75px);
+  grid-template-rows: repeat(5, 75px);
   background-color: hsl(223, 31%, 20%);
 }
 
@@ -98,7 +190,7 @@ body {
   border-radius: 5px;
   background-color: hsl(30, 25%, 89%);
   color: hsl(224, 28%, 35%);
-  padding: 15px;
+  padding: 15px 10px;
   margin: 8px;
   box-shadow: 0 4px 0 0 hsl(28, 16%, 65%);
 }
@@ -135,5 +227,49 @@ button.text:active {
   color: hsl(0, 0%, 100%);
   box-shadow: 0 4px 0 0 hsl(6, 70%, 34%);
   background-color: hsl(6, 63%, 50%);
+}
+
+@media (max-width: 375px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media (min-width: 425px) {
+  .container {
+    width: 80%;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 45%;
+  }
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    width: 40%;
+  }
+
+  /*.buttons {*/
+  /*  display: grid;*/
+  /*  grid-template-columns: repeat(4, 25%);*/
+  /*}*/
+}
+
+@media (min-width: 1441px) {
+  .container {
+    width: 60%;
+  }
+
+  /*.buttons {*/
+  /*  display: grid;*/
+  /*  grid-template-columns: repeat(4, 25%);*/
+  /*}*/
 }
 </style>
