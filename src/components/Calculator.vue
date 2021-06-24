@@ -267,7 +267,7 @@ input[type="radio"]:checked {
 
 .display {
   grid-column: 1 / -1;
-  min-height: 90px;
+  min-height: 100px;
   background-color: var(--display-background-color);
   border-radius: 10px;
   color: var(--display-color);
