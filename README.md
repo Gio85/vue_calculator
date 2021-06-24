@@ -27,12 +27,12 @@ Users should be able to:
 
 ### Screenshot
 
-<img width="874" alt="Screenshot 2021-06-24 at 12 20 21" src="https://user-images.githubusercontent.com/49147449/123257386-feaab180-d4e9-11eb-8344-742af190caa2.png">
-<img width="873" alt="Screenshot 2021-06-24 at 12 20 57" src="https://user-images.githubusercontent.com/49147449/123257388-ff434800-d4e9-11eb-8e8a-57645bf78b02.png">
-<img width="869" alt="Screenshot 2021-06-24 at 12 21 06" src="https://user-images.githubusercontent.com/49147449/123257391-ffdbde80-d4e9-11eb-968c-5fae2d1d8670.png">
-<img width="207" alt="Screenshot 2021-06-24 at 12 21 23" src="https://user-images.githubusercontent.com/49147449/123257392-00747500-d4ea-11eb-8b33-a8d0a44fb48f.png">
-<img width="207" alt="Screenshot 2021-06-24 at 12 21 31" src="https://user-images.githubusercontent.com/49147449/123257394-00747500-d4ea-11eb-9e62-5fb9d69f640a.png">
-<img width="206" alt="Screenshot 2021-06-24 at 12 21 43" src="https://user-images.githubusercontent.com/49147449/123257397-010d0b80-d4ea-11eb-9b28-6d927ca5f36f.png">
+<img width="1552" alt="Screenshot 2021-06-24 at 12 47 08" src="https://user-images.githubusercontent.com/49147449/123257673-62cd7580-d4ea-11eb-899f-403403b038ac.png">
+<img width="1552" alt="Screenshot 2021-06-24 at 12 47 12" src="https://user-images.githubusercontent.com/49147449/123257677-64973900-d4ea-11eb-8ca8-31c83881a8d6.png">
+<img width="1552" alt="Screenshot 2021-06-24 at 12 47 15" src="https://user-images.githubusercontent.com/49147449/123257680-652fcf80-d4ea-11eb-9834-026b0c8f57e8.png">
+<img width="612" alt="Screenshot 2021-06-24 at 12 47 19" src="https://user-images.githubusercontent.com/49147449/123257684-6660fc80-d4ea-11eb-8adc-348cceda7a7f.png">
+<img width="612" alt="Screenshot 2021-06-24 at 12 47 23" src="https://user-images.githubusercontent.com/49147449/123257687-66f99300-d4ea-11eb-8acb-0a1d199f4a61.png">
+<img width="612" alt="Screenshot 2021-06-24 at 12 47 27" src="https://user-images.githubusercontent.com/49147449/123257690-67922980-d4ea-11eb-8a70-2deed9e0a4b2.png">
 
 
 
