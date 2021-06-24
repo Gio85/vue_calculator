@@ -2,7 +2,19 @@
   <div class="container">
     <div class="bar">
       <div>calc</div>
-      <div>theme</div>
+      <div>
+        <input type="radio" id="one" value="theme-one" v-on:click="toggle" />
+        <label for="one">1</label>
+        <input type="radio" id="two" value="theme-two" v-on:click="toggle" />
+        <label for="two">2</label>
+        <input
+          type="radio"
+          id="three"
+          value="theme-three"
+          v-on:click="toggle"
+        />
+        <label for="three">3</label>
+      </div>
     </div>
     <div class="display">
       {{ previousValue }} {{ operation }} {{ currentValue }}
@@ -50,7 +62,7 @@ const defaultState: IState = {
 export default defineComponent({
   name: "Calculator",
   components: {},
-  setup() {
+  setup(props, context) {
     const state = reactive<IState>({
       ...defaultState,
     });
@@ -122,6 +134,11 @@ export default defineComponent({
       state.currentValue = defaultState.currentValue;
     };
 
+    const toggle = (event: MouseEvent) => {
+      const { value } = event.target as unknown as HTMLInputElement;
+      context.emit("change-class", value);
+    };
+
     return {
       ...toRefs(state),
       appendValue,
@@ -129,17 +146,15 @@ export default defineComponent({
       resetState,
       compute,
       setOperation,
+      toggle,
     };
   },
 });
 </script>
 
 <style>
-body {
-  background-color: hsl(225, 21%, 49%);
-}
 .container {
-  color: hsl(0, 0%, 100%);
+  color: var(--container-color);
   font-size: 2rem;
   display: flex;
   flex-direction: column;
@@ -159,9 +174,9 @@ body {
 .display {
   grid-column: 1 / -1;
   min-height: 90px;
-  background-color: hsl(224, 36%, 15%);
+  background-color: var(--display-background-color);
   border-radius: 10px;
-  color: hsl(0, 0%, 100%);
+  color: var(--display-color);
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
@@ -178,7 +193,7 @@ body {
   border-radius: 10px;
   grid-template-columns: repeat(4, 75px);
   grid-template-rows: repeat(5, 75px);
-  background-color: hsl(223, 31%, 20%);
+  background-color: var(--buttons-background-color);
 }
 
 .buttons > button {
@@ -188,11 +203,11 @@ body {
   font-size: 2rem;
   outline: none;
   border-radius: 5px;
-  background-color: hsl(30, 25%, 89%);
-  color: hsl(224, 28%, 35%);
+  background-color: var(--button-background-color);
+  color: var(--button-color);
   padding: 15px 10px;
   margin: 8px;
-  box-shadow: 0 4px 0 0 hsl(28, 16%, 65%);
+  box-shadow: 0 4px 0 0 var(--button-box-shadow-color);
 }
 
 .buttons > button:active {
@@ -205,16 +220,16 @@ body {
 }
 
 .span-two.text {
-  background-color: hsl(225, 21%, 49%);
-  box-shadow: 0 4px 0 0 hsl(224, 28%, 35%);
-  color: hsl(0, 0%, 100%);
+  background-color: var(--span-two-text-background-color);
+  box-shadow: 0 4px 0 0 var(--span-two-text-box-shadow-color);
+  color: var(--span-two-text-color);
 }
 
 .text {
-  box-shadow: 0 4px 0 0 hsl(224, 28%, 35%) !important;
-  background-color: hsl(225, 21%, 49%) !important;
+  box-shadow: 0 4px 0 0 var(--span-two-text-box-shadow-color) !important;
+  background-color: var(--span-two-text-background-color) !important;
   font-size: 1rem !important;
-  color: hsl(0, 0%, 100%) !important;
+  color: var(--span-two-text-color) !important;
 }
 
 button.text:active {
@@ -224,9 +239,9 @@ button.text:active {
 
 .span-two.red {
   font-size: 1rem;
-  color: hsl(0, 0%, 100%);
-  box-shadow: 0 4px 0 0 hsl(6, 70%, 34%);
-  background-color: hsl(6, 63%, 50%);
+  color: var(--span-two-red-color);
+  box-shadow: 0 4px 0 0 var(--span-two-red-box-shadow-color);
+  background-color: var(--span-two-red-background-color);
 }
 
 @media (max-width: 375px) {
@@ -255,21 +270,11 @@ button.text:active {
   .container {
     width: 40%;
   }
-
-  /*.buttons {*/
-  /*  display: grid;*/
-  /*  grid-template-columns: repeat(4, 25%);*/
-  /*}*/
 }
 
 @media (min-width: 1441px) {
   .container {
     width: 60%;
   }
-
-  /*.buttons {*/
-  /*  display: grid;*/
-  /*  grid-template-columns: repeat(4, 25%);*/
-  /*}*/
 }
 </style>
