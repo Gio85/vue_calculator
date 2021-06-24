@@ -2,18 +2,35 @@
   <div class="container">
     <div class="bar">
       <div>calc</div>
-      <div>
-        <input type="radio" id="one" value="theme-one" v-on:click="toggle" />
-        <label for="one">1</label>
-        <input type="radio" id="two" value="theme-two" v-on:click="toggle" />
-        <label for="two">2</label>
+      <div class="switch">
+        <div class="switch__main__label">THEME</div>
+        <div class="switch__group"></div>
         <input
+          name="switch"
+          id="one"
           type="radio"
+          value="theme-one"
+          v-on:click="toggle"
+          checked
+        />
+        <label for="one" class="switch__label">1</label>
+        <input
+          name="switch"
+          id="two"
+          type="radio"
+          value="theme-two"
+          v-on:click="toggle"
+        />
+        <label for="two" class="switch__label">2</label>
+        <input
+          name="switch"
           id="three"
+          type="radio"
           value="theme-three"
           v-on:click="toggle"
         />
-        <label for="three">3</label>
+        <label for="three" class="switch__label">3</label>
+        <div class="switch__indicator" />
       </div>
     </div>
     <div class="display">
@@ -153,6 +170,83 @@ export default defineComponent({
 </script>
 
 <style>
+.switch {
+  font-size: 0.6rem;
+  position: relative;
+  width: 5rem;
+  height: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.switch:before {
+  content: "  ";
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 3rem;
+  background: #000;
+  border-radius: 30px;
+}
+
+.switch__group {
+  position: absolute;
+  width: 4.5rem;
+  background-color: var(--buttons-background-color);
+  height: 1.2rem;
+  bottom: 0;
+  border-radius: 10px;
+}
+
+.switch__main__label {
+  position: absolute;
+  left: -3.5rem;
+  bottom: 0;
+  font-size: inherit;
+}
+
+.switch__label {
+  width: 10px;
+  cursor: pointer;
+}
+
+.switch__label:hover {
+  color: white;
+}
+
+.switch__indicator {
+  width: 0.8rem;
+  height: 0.8rem;
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  border-radius: 50%;
+  transition: transform 600ms cubic-bezier(0.02, 0.94, 0.09, 0.97),
+    background 300ms cubic-bezier(0.17, 0.67, 0.14, 1.03);
+  transform: translate3d(1rem, 0, 0);
+}
+
+input#one:checked ~ .switch__indicator {
+  background: var(--span-two-red-background-color);
+  transform: translate3d(0.5rem, 0, 0);
+}
+input#two:checked ~ .switch__indicator {
+  background: var(--span-two-red-background-color);
+  transform: translate3d(2rem, 0, 0);
+}
+input#three:checked ~ .switch__indicator {
+  background: var(--span-two-red-background-color);
+  transform: translate3d(3.3rem, 0, 0);
+}
+input[type="radio"]:not(:checked) {
+  display: none;
+}
+input[type="radio"]:checked {
+  display: none;
+}
+
 .container {
   color: var(--container-color);
   font-size: 2rem;
