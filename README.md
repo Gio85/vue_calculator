@@ -10,7 +10,6 @@ This is a solution to the [Calculator app challenge on Frontend Mentor](https://
     - [Links](#links)
 - [My process](#my-process)
     - [Built with](#built-with)
-    - [What I learned](#what-i-learned)
     - [Useful resources](#useful-resources)
 - [Author](#author)
 
@@ -40,7 +39,6 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com) - NOT READY YET
 - Live Site URL: [Here](https://gio85.github.io/vue_calculator/)
 
 ## My process
@@ -53,26 +51,6 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 - [Vue 3](https://vuejs.org/) - JS framework
-
-### What I learned
-
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
 
 ### Useful resources
 
