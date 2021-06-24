@@ -29,9 +29,14 @@ Users should be able to:
 
 ### Screenshot
 
-<img width="351" alt="Screenshot 2021-06-23 at 19 17 01" src="https://user-images.githubusercontent.com/49147449/123148018-a5923d80-d457-11eb-9ff5-d380406b22fe.png">
+![desktop-design-theme-1](https://user-images.githubusercontent.com/49147449/123254661-d79eb080-d4e6-11eb-8aed-a87aef1747a9.jpg)
+![desktop-design-theme-2](https://user-images.githubusercontent.com/49147449/123254664-d8cfdd80-d4e6-11eb-9b73-6f83d198cd84.jpg)
+![desktop-design-theme-3](https://user-images.githubusercontent.com/49147449/123254667-d8cfdd80-d4e6-11eb-9b62-be71b51bb34a.jpg)
+![desktop-preview](https://user-images.githubusercontent.com/49147449/123254668-d9687400-d4e6-11eb-99ed-e0f70d32d282.jpg)
+![mobile-design-theme-1](https://user-images.githubusercontent.com/49147449/123254669-d9687400-d4e6-11eb-98e0-6ce3ea765d98.jpg)
+![mobile-design-theme-2](https://user-images.githubusercontent.com/49147449/123254671-da010a80-d4e6-11eb-856a-04e07e12b3e0.jpg)
+![mobile-design-theme-3](https://user-images.githubusercontent.com/49147449/123254673-da010a80-d4e6-11eb-883f-113e965f0c3b.jpg)
 
-<img width="1679" alt="Screenshot 2021-06-23 at 19 12 57" src="https://user-images.githubusercontent.com/49147449/123147856-711e8180-d457-11eb-87d6-a6b3eb767c0f.png">
 
 ### Links
 
