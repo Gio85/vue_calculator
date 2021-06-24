@@ -1,3 +1,9 @@
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![code style: eslint](https://img.shields.io/badge/lintener-eslint-yellowgreen)](https://github.com/eslint/eslint)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![!vue](https://img.shields.io/badge/framework-vue-green)](https://github.com/vuejs/vue)
+[![deploy: gh pages](https://img.shields.io/badge/deploy-ghPages-black)](https://github.com/tschaub/gh-pages)
+
 # Frontend Mentor - Calculator app solution
 
 This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
