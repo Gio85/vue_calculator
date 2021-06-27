@@ -1,3 +1,9 @@
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![code style: eslint](https://img.shields.io/badge/lintener-eslint-yellowgreen)](https://github.com/eslint/eslint)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![!vue](https://img.shields.io/badge/framework-vue-green)](https://github.com/vuejs/vue)
+[![deploy: gh pages](https://img.shields.io/badge/deploy-ghPages-black)](https://github.com/tschaub/gh-pages)
+
 # Frontend Mentor - Calculator app solution
 
 This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
@@ -27,13 +33,13 @@ Users should be able to:
 
 ### Screenshot
 
-![desktop-design-theme-1](https://user-images.githubusercontent.com/49147449/123254661-d79eb080-d4e6-11eb-8aed-a87aef1747a9.jpg)
-![desktop-design-theme-2](https://user-images.githubusercontent.com/49147449/123254664-d8cfdd80-d4e6-11eb-9b73-6f83d198cd84.jpg)
-![desktop-design-theme-3](https://user-images.githubusercontent.com/49147449/123254667-d8cfdd80-d4e6-11eb-9b62-be71b51bb34a.jpg)
+<img width="1552" alt="Screenshot 2021-06-24 at 12 47 08" src="https://user-images.githubusercontent.com/49147449/123257673-62cd7580-d4ea-11eb-899f-403403b038ac.png">
+<img width="1552" alt="Screenshot 2021-06-24 at 12 47 12" src="https://user-images.githubusercontent.com/49147449/123257677-64973900-d4ea-11eb-8ca8-31c83881a8d6.png">
+<img width="1552" alt="Screenshot 2021-06-24 at 12 47 15" src="https://user-images.githubusercontent.com/49147449/123257680-652fcf80-d4ea-11eb-9834-026b0c8f57e8.png">
+<img width="612" alt="Screenshot 2021-06-24 at 12 47 19" src="https://user-images.githubusercontent.com/49147449/123257684-6660fc80-d4ea-11eb-8adc-348cceda7a7f.png">
+<img width="612" alt="Screenshot 2021-06-24 at 12 47 23" src="https://user-images.githubusercontent.com/49147449/123257687-66f99300-d4ea-11eb-8acb-0a1d199f4a61.png">
+<img width="612" alt="Screenshot 2021-06-24 at 12 47 27" src="https://user-images.githubusercontent.com/49147449/123257690-67922980-d4ea-11eb-8a70-2deed9e0a4b2.png">
 
-![mobile-design-theme-1](https://user-images.githubusercontent.com/49147449/123254669-d9687400-d4e6-11eb-98e0-6ce3ea765d98.jpg)
-![mobile-design-theme-2](https://user-images.githubusercontent.com/49147449/123254671-da010a80-d4e6-11eb-856a-04e07e12b3e0.jpg)
-![mobile-design-theme-3](https://user-images.githubusercontent.com/49147449/123254673-da010a80-d4e6-11eb-883f-113e965f0c3b.jpg)
 
 
 ### Links
