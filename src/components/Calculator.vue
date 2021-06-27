@@ -11,7 +11,7 @@
           type="radio"
           value="theme-one"
           v-on:click="toggle"
-          checked
+          :checked="isChecked(className, 'theme-one')"
         />
         <label for="one" class="switch__label">1</label>
         <input
@@ -20,6 +20,7 @@
           type="radio"
           value="theme-two"
           v-on:click="toggle"
+          :checked="isChecked(className, 'theme-two')"
         />
         <label for="two" class="switch__label">2</label>
         <input
@@ -28,6 +29,7 @@
           type="radio"
           value="theme-three"
           v-on:click="toggle"
+          :checked="isChecked(className, 'theme-three')"
         />
         <label for="three" class="switch__label">3</label>
         <div class="switch__indicator" />
@@ -66,7 +68,7 @@
 <script lang="ts">
 import { defineComponent, reactive, toRefs } from "vue";
 import { IState, TOperation } from "@/types";
-import { formatNumber } from "@/utils";
+import { formatNumber, isChecked } from "@/utils";
 
 const defaultState: IState = {
   currentValue: "",
@@ -79,6 +81,7 @@ const defaultState: IState = {
 export default defineComponent({
   name: "Calculator",
   components: {},
+  props: ["className"],
   setup(props, context) {
     const state = reactive<IState>({
       ...defaultState,
@@ -164,6 +167,7 @@ export default defineComponent({
       compute,
       setOperation,
       toggle,
+      isChecked,
     };
   },
 });

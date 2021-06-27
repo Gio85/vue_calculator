@@ -17,3 +17,6 @@ export const formatNumber = (number: string): string => {
     return result;
   }
 };
+
+export const isChecked = (stateClass: string, className: string): boolean =>
+  stateClass === className;

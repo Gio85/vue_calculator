@@ -1,6 +1,6 @@
 <template>
   <div id="main" :class="className">
-    <Calculator @change-class="toggle" />
+    <Calculator @change-class="toggle" :className="className" />
   </div>
 </template>
 
